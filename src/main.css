@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind screens;
+
+html,
+body,
+body > div {
+  @apply w-full h-full;
+}
+
+th,
+td {
+  @apply border border-green-600 py-1 px-4;
+}
+
+input {
+  @apply mr-2;
+}

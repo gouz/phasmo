@@ -1,0 +1,31 @@
+{
+  "short_name": "Phasmo",
+  "name": "Outil Phasmo",
+  "icons": [
+    {
+      "src": "img/favicon.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "img/logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "img/logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "img/maskable_icon.png",
+      "sizes": "196x196",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#061e18",
+  "background_color": "#061e18"
+}

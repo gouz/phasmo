@@ -1,0 +1,22 @@
+{
+  "name": "phasmo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/gouz/phasmo.git",
+  "author": "Sylvain Gougouzian <sylvain.gougouzian@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "parcel": "^2.0.0-nightly.481"
+  },
+   "scripts": {
+    "start": "parcel serve ./src/index.pug --open",
+    "build": "parcel build ./src/index.pug"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.1.0",
+    "postcss": "^8.2.1",
+    "postcss-import": "^14.0.0",
+    "pug": "^3.0.0",
+    "tailwindcss": "^2.0.2"
+  }
+}
