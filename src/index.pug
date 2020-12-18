@@ -12,12 +12,12 @@ html(lang='fr')
   
   - 
     var _clues = [
+                  {id: 'emf', emoji: '🚥', title: 'EMF'},
                   {id: 'spirit', emoji: '📻', title: 'Spirit Box'},
                   {id: 'empreintes', emoji: '🐾', title: 'Empreintes'},
+                  {id: 'orbe', emoji: '📹', title: 'Orbe'},
                   {id: 'ecritures', emoji: '📖', title: 'Ecritures'},
-                  {id: 'emf', emoji: '🚥', title: 'EMF'},
-                  {id: 'glagla', emoji: '❄', title: 'Températures Glaciales'},
-                  {id: 'orbe', emoji: '📹', title: 'Orbe'}
+                  {id: 'glagla', emoji: '❄', title: 'Températures Glaciales'}
                  ]
     var _ghosts = [
                     {name: 'Esprit', clues: ['spirit', 'empreintes', 'ecritures']},
@@ -31,7 +31,7 @@ html(lang='fr')
                     {name: 'Ombre', clues: ['ecritures', 'emf', 'orbe']},
                     {name: 'Demon', clues: ['spirit', 'ecritures', 'glagla']},
                     {name: 'Yurei', clues: ['ecritures', 'glagla', 'orbe']},
-                    {name: 'Oni', clues: ['spirit', 'ecritures', 'glagla']}
+                    {name: 'Oni', clues: ['spirit', 'ecritures', 'emf']}
                   ]
 
   mixin clues(items)
