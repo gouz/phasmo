@@ -5,11 +5,22 @@
   "author": "Sylvain Gougouzian <sylvain.gougouzian@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "parcel": "^2.0.0-nightly.481"
+    "parcel": "^2.0.0-nightly.481",
+    "workbox-cli": "^6.0.2"
   },
-   "scripts": {
+  "browserslist": [
+    "> 0.2%",
+    "not dead"
+  ],
+  "targets": {
+    "default": {
+      "includeNodeModules": true
+    }
+  },
+  "scripts": {
     "start": "parcel serve ./src/index.pug --open",
-    "build": "parcel build ./src/index.pug"
+    "build": "parcel build ./src/index.pug",
+    "postbuild": "workbox generateSW"
   },
   "devDependencies": {
     "autoprefixer": "^10.1.0",
