@@ -6,133 +6,56 @@ html(lang='fr')
     meta(http-equiv='X-UA-Compatible', content='ie=edge')
     title phasmo
     link(href='./main.css', rel='stylesheet')
-    
+  
+  - 
+    var _clues = [
+                  {id: 'spirit', emoji: '📻', title: 'Spirit Box'},
+                  {id: 'empreintes', emoji: '🐾', title: 'Empreintes'},
+                  {id: 'ecritures', emoji: '📖', title: 'Ecritures'},
+                  {id: 'emf', emoji: '🚥', title: 'EMF'},
+                  {id: 'glagla', emoji: '🥶', title: 'Températures Glaciales'},
+                  {id: 'orbe', emoji: '🎇', title: 'Orbe'}
+                 ]
+    var _ghosts = [
+                    {name: 'Esprit', clues: ['spirit', 'empreintes', 'ecritures']},
+                    {name: 'Spectre', clues: ['spirit', 'empreintes', 'glagla']},
+                    {name: 'Fantome', clues: ['emf', 'glagla', 'orbe']},
+                    {name: 'Poltergeist', clues: ['spirit', 'empreintes', 'orbe']},
+                    {name: 'Banshee', clues: ['empreintes', 'emf', 'glagla']},
+                    {name: 'Djinn', clues: ['spirit', 'emf', 'orbe']},
+                    {name: 'Cauchemar', clues: ['spirit', 'glagla', 'orbe']},
+                    {name: 'Revenant', clues: ['empreintes', 'ecritures', 'emf']},
+                    {name: 'Ombre', clues: ['ecritures', 'emf', 'orbe']},
+                    {name: 'Demon', clues: ['spirit', 'ecritures', 'glagla']},
+                    {name: 'Yurei', clues: ['ecritures', 'glagla', 'orbe']},
+                    {name: 'Oni', clues: ['spirit', 'ecritures', 'glagla']}
+                  ]
+
+  mixin clues(items)
+    each item in items
+      th
+        div
+          input(id=item.id, name=item.id, type="checkbox")
+          label(for=item.id, title=item.title)= item.emoji
+  
+  mixin ghost(items)
+    each item in items
+      tr(class=item.clues.join(' '))
+        td= item.name
+        each cl in _clues
+          if item.clues.indexOf(cl.id) != -1
+            td ✔
+          else
+            td
+
   body
     .flex.justify-center
-      table.table-auto.border-collapse
+      table.table-fixed.border-collapse
         thead
           tr
             th Type
-            th
-              div
-                input(id="spirit", type="checkbox", name="spirit")
-                label(for="spirit") Spirit
-            th 
-              div
-                input(id="empreintes", type="checkbox", name="empreintes")
-                label(for="empreintes") Empreintes
-            th 
-              div
-                input(id="ecritures", type="checkbox", name="ecritures")
-                label(for="ecritures") Ecritures
-            th 
-              div
-                input(id="emf", type="checkbox", name="emf")
-                label(for="emf") EMF
-            th  
-              div
-                input(id="glagla", type="checkbox", name="glagla")
-                label(for="glagla") GlaGla
-            th  
-              div
-                input(id="orbe", type="checkbox", name="orbe")
-                label(for="orbe") Orbe
+            +clues(_clues)
         tbody
-          tr.spirit.empreintes.ecritures
-            td Esprit
-            td X
-            td X
-            td X
-            td
-            td
-            td
-          tr.spirit.empreintes.glagla
-            td Spectre
-            td X
-            td X
-            td 
-            td
-            td X
-            td
-          tr.emf.glagla.orbe
-            td Fantome
-            td 
-            td 
-            td 
-            td X
-            td X
-            td X
-          tr.spirit.empreintes.orbe
-            td Poltergeist
-            td X
-            td X
-            td 
-            td 
-            td 
-            td X
-          tr.empreintes.emf.glagla
-            td Banshee
-            td 
-            td X
-            td 
-            td X
-            td X
-            td 
-          tr.spirit.emf.orbe
-            td Djinn
-            td X
-            td 
-            td 
-            td X
-            td 
-            td X
-          tr.spirit.glagla.orbe
-            td Cauchemar
-            td X
-            td 
-            td 
-            td 
-            td X
-            td X
-          tr.empreintes.ecritures.emf
-            td Revenant
-            td 
-            td X
-            td X
-            td X
-            td 
-            td 
-          tr.ecritures.emf.orbe
-            td Ombre
-            td
-            td 
-            td X
-            td X
-            td
-            td X
-          tr.spirit.ecritures.glagla
-            td Demon
-            td X
-            td 
-            td X
-            td 
-            td X
-            td 
-          tr.ecritures.glagla.orbe
-            td Yurei
-            td 
-            td 
-            td X
-            td 
-            td X
-            td X
-          tr.spirit.ecritures.glagla.orbe
-            td Oni
-            td X
-            td 
-            td X
-            td X
-            td 
-            td 
+          +ghost(_ghosts)
     script(src="main.js")
     

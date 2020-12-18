@@ -6,7 +6,7 @@
 html,
 body,
 body > div {
-  @apply w-full h-full;
+  @apply w-full h-full text-sm;
 }
 
 th,
@@ -16,4 +16,21 @@ td {
 
 input {
   @apply mr-2;
+}
+
+table {
+  @apply mt-4;
+}
+
+th {
+  @apply text-lg;
+}
+
+td {
+  @apply text-center;
+}
+
+tr td:first-child,
+tr th:first-child {
+  @apply text-left font-bold text-gray-200 bg-green-800;
 }
