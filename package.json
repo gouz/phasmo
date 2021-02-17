@@ -5,7 +5,8 @@
   "author": "Sylvain Gougouzian <sylvain.gougouzian@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "parcel": "^2.0.0-nightly.481",
+    "parcel": "^2.0.0-nightly.532",
+    "postcss-loader": "^4.1.0",
     "workbox-cli": "^6.0.2"
   },
   "browserslist": [
@@ -24,7 +25,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.1.0",
-    "postcss": "^8.2.1",
+    "postcss": "^8.1.0",
     "postcss-import": "^14.0.0",
     "pug": "^3.0.0",
     "tailwindcss": "^2.0.2"
