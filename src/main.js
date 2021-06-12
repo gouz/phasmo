@@ -1,6 +1,10 @@
 import "./globals.css";
 import "./main.less";
 
+import tippy from "tippy.js";
+import "tippy.js/dist/tippy.css";
+import "tippy.js/animations/scale.css";
+
 let classes = {};
 
 import jsonUrl from "url:./config.json";
@@ -30,7 +34,7 @@ fetch(jsonUrl).then((response) => {
       }
       $tbody.innerHTML += `
         <tr class="${ghost.clues.join(" ")}">
-          <td><span title="${ghost.desc}\n\nForces uniques: ${
+          <td><span data-tippy-content="${ghost.desc}\n\nForces uniques: ${
         ghost.forces
       }\n\nFaiblesses: ${ghost.faiblesses}">🔍 ${ghost.name}</span></td>
           ${clues}
@@ -56,6 +60,10 @@ fetch(jsonUrl).then((response) => {
         },
         false
       );
+    });
+    tippy("[data-tippy-content]", {
+      placement: "right",
+      animation: "scale",
     });
   });
 });
