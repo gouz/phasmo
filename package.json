@@ -5,9 +5,8 @@
   "author": "Sylvain Gougouzian <sylvain.gougouzian@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "parcel": "^2.0.0-nightly.532",
-    "postcss-loader": "^4.1.0",
-    "workbox-cli": "^6.0.2"
+    "@popperjs/core": "^2.9.2",
+    "@staaky/tipped": "^4.7.0"
   },
   "browserslist": [
     "> 0.2%",
@@ -19,15 +18,22 @@
     }
   },
   "scripts": {
-    "start": "parcel serve ./src/index.pug --open",
-    "build": "parcel build ./src/index.pug",
-    "postbuild": "workbox generateSW"
+    "preparcel": "rm -rf dist/",
+    "parcel": "parcel $RUN src/index.pug",
+    "build": "RUN=build npm run parcel -- --no-cache --no-source-maps",
+    "watch": "RUN=watch npm run parcel",
+    "dev": "RUN=serve npm run parcel"
   },
   "devDependencies": {
-    "autoprefixer": "^10.1.0",
-    "postcss": "^8.1.0",
+    "@parcel/packager-raw-url": "^2.0.0-beta.3.1",
+    "@parcel/transformer-less": "^2.0.0-beta.3.1",
+    "@parcel/transformer-pug": "^2.0.0-beta.3.1",
+    "@parcel/transformer-webmanifest": "^2.0.0-beta.3.1",
+    "autoprefixer": "^10.2.6",
+    "parcel": "^2.0.0-beta.3.1",
+    "postcss": "^8.3.2",
     "postcss-import": "^14.0.0",
-    "pug": "^3.0.0",
-    "tailwindcss": "^2.0.2"
+    "pug": "^3.0.2",
+    "tailwindcss": "^2.1.4"
   }
 }

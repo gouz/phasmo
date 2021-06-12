@@ -1,0 +1,35 @@
+html,
+body,
+body > div {
+  @apply w-full h-full text-sm;
+}
+
+input {
+  @apply mr-2;
+}
+
+table {
+  @apply mt-4;
+  th,
+  td {
+    @apply px-4 py-1 border border-green-600;
+  }
+  th {
+    @apply text-lg;
+  }
+
+  td {
+    @apply text-center;
+    span {
+      @apply cursor-help;
+    }
+  }
+  tr td:first-child,
+  tr th:first-child {
+    @apply font-bold text-left text-gray-200 bg-green-800;
+  }
+
+  .tooltip {
+    @apply bg-black text-white px-3 py-2 rounded text-xs;
+  }
+}

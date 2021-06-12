@@ -1,11 +1,11 @@
 module.exports = {
-  purge: {
-    enabled: true,
-    content: ['./src/**/*.pug', './src/**/*.js'],
-  },
+  purge: ["./src/**/*.pug", "./src/**/*.js"],
+  darkMode: false,
   theme: {
     extend: {},
   },
-  variants: {},
+  variants: {
+    extend: {},
+  },
   plugins: [],
 };
