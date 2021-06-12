@@ -18,7 +18,7 @@ fetch(jsonUrl).then((response) => {
       <th>
         <div>
           <input id="${clue.id}" name="${clue.id}" type="checkbox" />
-          <label for="${clue.id}" title="${clue.title}">${clue.emoji}</label>
+          <label for="${clue.id}" data-tippy-content="${clue.title}" title="${clue.title}">${clue.emoji}</label>
         </div>
       </th>
       `;
@@ -32,13 +32,22 @@ fetch(jsonUrl).then((response) => {
         if (ghost.clues.indexOf(clue.id) != -1) clues += `<td>✔</td>`;
         else clues += `<td></td>`;
       }
+      let tooltip = `
+        ${ghost.desc}
+        <br />
+        <br />
+        Forces uniques: ${ghost.forces}
+        <br />
+        <br />
+        Faiblesses: ${ghost.faiblesses}
+      `;
       $tbody.innerHTML += `
         <tr class="${ghost.clues.join(" ")}">
-          <td><span data-tippy-content="${
-            ghost.desc
-          }<br /><br />Forces uniques: ${ghost.forces}<br /><br />Faiblesses: ${
-        ghost.faiblesses
-      }">🔍 ${ghost.name}</span></td>
+          <td>
+            <span data-tippy-content="${tooltip}" title="${tooltip}">
+              🔍 ${ghost.name}
+            </span>
+          </td>
           ${clues}
         </tr>
       `;
