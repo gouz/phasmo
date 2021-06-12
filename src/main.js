@@ -32,7 +32,7 @@ fetch(jsonUrl).then((response) => {
         <tr class="${ghost.clues.join(" ")}">
           <td><span title="${ghost.desc}\n\nForces uniques: ${
         ghost.forces
-      }\n\nFaiblesses: ${ghost.faiblesses}">${ghost.name}</span></td>
+      }\n\nFaiblesses: ${ghost.faiblesses}">🔍 ${ghost.name}</span></td>
           ${clues}
         </tr>
       `;
