@@ -34,9 +34,11 @@ fetch(jsonUrl).then((response) => {
       }
       $tbody.innerHTML += `
         <tr class="${ghost.clues.join(" ")}">
-          <td><span data-tippy-content="${ghost.desc}\n\nForces uniques: ${
-        ghost.forces
-      }\n\nFaiblesses: ${ghost.faiblesses}">🔍 ${ghost.name}</span></td>
+          <td><span data-tippy-content="${
+            ghost.desc
+          }<br /><br />Forces uniques: ${ghost.forces}<br /><br />Faiblesses: ${
+        ghost.faiblesses
+      }">🔍 ${ghost.name}</span></td>
           ${clues}
         </tr>
       `;
@@ -64,6 +66,7 @@ fetch(jsonUrl).then((response) => {
     tippy("[data-tippy-content]", {
       placement: "right",
       animation: "scale",
+      allowHTML: true,
     });
   });
 });

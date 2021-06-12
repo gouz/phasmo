@@ -25,7 +25,7 @@
     {
       "name": "Esprit",
       "clues": ["spirit", "empreintes", "ecritures"],
-      "desc": "L'esprit est le fantôme le plus courant que vous rencontrerz, mais il est très puissant et dangereux. Ils sont généralement découverts sur l'un de leurs terrains de chasse après une mort inexpliquée.",
+      "desc": "L'esprit est le fantôme le plus courant que vous rencontrerez, mais il est très puissant et dangereux. Ils sont généralement découverts sur l'un de leurs terrains de chasse après une mort inexpliquée.",
       "forces": "Rien",
       "faiblesses": "L'utilisation de bâton d'encens sur un esprit l'empêchera d'attaquer pendant une longue période."
     },
