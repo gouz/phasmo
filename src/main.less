@@ -1,7 +1,6 @@
 html,
-body,
-body > div {
-  @apply w-full h-full text-sm;
+body {
+  @apply w-full h-full text-sm flex items-center;
 }
 
 input {
@@ -9,7 +8,7 @@ input {
 }
 
 table {
-  @apply mt-4;
+  @apply m-2 table-auto border-collapse w-full;
   th,
   td {
     @apply px-4 py-1 border border-green-600;
@@ -20,16 +19,23 @@ table {
 
   td {
     @apply text-center;
-    span {
-      @apply cursor-help;
-    }
   }
   tr td:first-child,
   tr th:first-child {
-    @apply font-bold text-left text-gray-200 bg-green-800;
-  }
+    @apply font-bold text-left text-gray-200 bg-green-800 px-0 py-0;
+    span {
+      @apply cursor-help block px-4 py-1;
 
-  .tooltip {
-    @apply bg-black text-white px-3 py-2 rounded text-xs;
+      &:hover {
+        @apply text-green-600 bg-white;
+      }
+    }
+  }
+}
+
+@screen lg {
+  html,
+  body {
+    @apply text-lg;
   }
 }
