@@ -17,7 +17,7 @@
     }
   },
   "scripts": {
-    "preparcel": "rm -rf .parcel-cache dist/",
+    "preparcel": "rm -rf .parcel-cache dist docs",
     "parcel": "parcel $RUN src/index.pug",
     "build": "RUN=build npm run parcel -- --no-cache --no-source-maps --dist-dir docs",
     "watch": "RUN=watch npm run parcel",

@@ -18,7 +18,7 @@ fetch(jsonUrl).then((response) => {
       <th>
         <div>
           <input id="${clue.id}" name="${clue.id}" type="checkbox" />
-          <label for="${clue.id}" data-tippy-content="${clue.title}" title="${clue.title}">${clue.emoji}</label>
+          <label for="${clue.id}" data-tippy-content="${clue.title}">${clue.emoji}</label>
         </div>
       </th>
       `;
@@ -44,7 +44,7 @@ fetch(jsonUrl).then((response) => {
       $tbody.innerHTML += `
         <tr class="${ghost.clues.join(" ")}">
           <td>
-            <span data-tippy-content="${tooltip}" title="${tooltip}">
+            <span data-tippy-content="${tooltip}">
               🔍 ${ghost.name}
             </span>
           </td>
