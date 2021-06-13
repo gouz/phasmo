@@ -1,0 +1,110 @@
+{
+  "clues": [
+    { "id": "emf", "emoji": "🚥", "title": "EMF" },
+    { "id": "spirit", "emoji": "📻", "title": "Spirit Box" },
+    { "id": "empreintes", "emoji": "🐾", "title": "Empreintes" },
+    { "id": "orbe", "emoji": "📹", "title": "Orbe" },
+    { "id": "ecritures", "emoji": "📖", "title": "Ecritures" },
+    { "id": "glagla", "emoji": "❄", "title": "Températures Glaciales" }
+  ],
+  "ghosts": [
+    {
+      "name": "Banshee",
+      "clues": ["emf", "empreintes", "glagla"],
+      "desc": "La Banshee est une chasseuse naturelle et attaquera n'importe quoi. Elle est connu pour traquer une personne à la fois jusqu'à ce qu'elle soit tuée.",
+      "forces": "Une Banshee ne ciblera qu'une personne à la fois.",
+      "faiblesses": "Les Banchees craignent le Crucifix et seront moins agressives à proximité d'un."
+    },
+    {
+      "name": "Cauchemar",
+      "clues": ["spirit", "orbe", "glagla"],
+      "desc": "Le Cauchement est la source de tous les mauvais rêves, ce qui le rend plus puissant dans l'obscurité.",
+      "forces": "Un Cauchemar aura une chance accrue d'attaquer dans l'obscurité.",
+      "faiblesses": "Allumer les lumières autour du Cauchement réduira ses chances d'attaquer."
+    },
+    {
+      "name": "Esprit",
+      "clues": ["spirit", "empreintes", "ecritures"],
+      "desc": "L'esprit est le fantôme le plus courant que vous rencontrerez, mais il est très puissant et dangereux. Ils sont généralement découverts sur l'un de leurs terrains de chasse après une mort inexpliquée.",
+      "forces": "Rien",
+      "faiblesses": "L'utilisation de bâton d'encens sur un esprit l'empêchera d'attaquer pendant une longue période."
+    },
+    {
+      "name": "Demon",
+      "clues": ["spirit", "ecritures", "glagla"],
+      "desc": "Le Démon est l'un des pires fantômes que vous puissiez rencontrer puisqu'il attaque sans raison.",
+      "forces": "Les Démons attaqueront plus souvent que n'importe quel autre fantôme.",
+      "faiblesses": "Poser correctement une question à un Démon sur une planche Ouija ne réduire pas la santé mentale des utilisateurs."
+    },
+    {
+      "name": "Djinn",
+      "clues": ["spirit", "orbe", "emf"],
+      "desc": "Le Djinn est un fantôme territorial qui attaquera lorsqu'il est menacé. Il est également connu pour pouvoir se déplacer à une vitesse significative.",
+      "forces": "Un Djinn voyagera à une vitesse plus rapide si sa victime est loin.",
+      "faiblesses": "Couper le courant empêchera le Djinne d'utiliser sa capacité."
+    },
+    {
+      "name": "Fantome",
+      "clues": ["emf", "orbe", "glagla"],
+      "desc": "Le Fantôme peut posséder les vivants et est le plus souvent invoqué via une planche Ouija. Il induit également la peur chez ceux qui l'entourent.",
+      "forces": "Regarder un Fantôme diminuera considérablement votre santé mentale.",
+      "faiblesses": "Prendre une photo du Fantôme le fera temporairement disparaître."
+    },
+    {
+      "name": "Hantu",
+      "clues": ["empreintes", "orbe", "ecritures"],
+      "desc": "Un Hantu est un fantôme rare présent sous des climats chauds. Ils sont connus pour attaquer durant des périodes froides.",
+      "forces": "Les basses températures permettent au Hantu de bouger plus rapidement.",
+      "faiblesses": "Un Hantu bougera plus lentement dans des zones plus chaudes."
+    },
+    {
+      "name": "Ombre",
+      "clues": ["emf", "orbe", "ecritures"],
+      "desc": "L'Ombre est connue pour être un fantôme timide. Il est prouvé qu'une Ombre arrêtera toute activité paranormale s'il y a plusieurs personnes à proximité.",
+      "forces": "Etre timide signifie que ce fantôme sera plus difficile à trouver.",
+      "faiblesses": "Ce fantôme n'entrera pas en mode chasse s'il y a plusieurs personnes à proximité."
+    },
+    {
+      "name": "Oni",
+      "clues": ["emf", "spirit", "ecritures"],
+      "desc": "Les Onis sont des cousins des Démons et possèdent une force phénoménale. Il y a eu des rumeurs selons lesquelles ils deviennent plus actifs autour de leur proie.",
+      "forces": "Les Oni sont plus actifs lorsque des personnes sont à proximité et font bouger des objets à grande vitesse.",
+      "faiblesses": "Etre plus actif rendra l'Oni plus facile à trouver et à identifier."
+    },
+    {
+      "name": "Poltergeist",
+      "clues": ["spirit", "empreintes", "orbe"],
+      "desc": "L'un des fantômes les plus célèbres : le Poltergeist. Egalement connu sous le nom d'esprit frappeur, il peut manipuler les objets qui l'entourent pour semer la peur chez ses victimes.",
+      "forces": "Un Poltergeist peut lancer d'énormes quantités d'objets à la fois.",
+      "faiblesses": "Un Poltergeist est presque inefficace dans une pièce vide."
+    },
+    {
+      "name": "Revenant",
+      "clues": ["emf", "empreintes", "ecritures"],
+      "desc": "Le Revenant est un fantôme lent mais violent qui attaquera sans discernement. On dit qu'il se déplace à une vitesse considérablement élevée lorsqu'il chasse.",
+      "forces": "Un Revenant voyagera à une vitesse beaucoup plus rapide lorqu'il chassera une victime.",
+      "faiblesses": "Se cacher du Revenant le fera bouger très lentement."
+    },
+    {
+      "name": "Spectre",
+      "clues": ["empreintes", "glagla", "spirit"],
+      "desc": "Le Spectre est l'un des fantômes les plus dangereux que vous puissiez rencontrer. C'est également le seul fantôme connu qui a la capacité de voler et qui est parfois connu pour traverser les murs.",
+      "forces": "Les Spectres ne touches presque jamais le sol, ce qui signifie qu'ils ne peuvent pas être suivis par des pas.",
+      "faiblesses": "Les Spectres ont une réaction toxique au sel."
+    },
+    {
+      "name": "Yokai",
+      "clues": ["spirit", "orbe", "ecritures"],
+      "desc": "Un Yokai est un type courant de fantôme attiré par les voix humaines. Ils sont généralement présents dans les demeures familiales.",
+      "forces": "Parler près d'un Yokai l'énervera et il risquera d'attaquer.",
+      "faiblesses": "Lors d'une chasse, le Yokai ne peut entendre que les voix proches de lui."
+    },
+    {
+      "name": "Yurei",
+      "clues": ["orbe", "ecritures", "glagla"],
+      "desc": "Le Yurei est un fantôme qui est revenu dans le monde physique, généralement dans un but de vengeance ou par pure haine.",
+      "forces": "Les Yurei sont connus pour avoir un effet plus fort sur la santé mentale des gens.",
+      "faiblesses": "Le fait d'utiliser un bâton d'encens danas la salle du Yurei l'empêchera de se promener longtemps dans les lieux."
+    }
+  ]
+}
