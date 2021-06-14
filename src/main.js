@@ -36,10 +36,10 @@ fetch(jsonUrl).then((response) => {
         ${ghost.desc}
         <br />
         <br />
-        Forces uniques: ${ghost.forces}
+        Forces uniques : ${ghost.strengths}
         <br />
         <br />
-        Faiblesses: ${ghost.faiblesses}
+        Faiblesses : ${ghost.weaknesses}
       `;
       $tbody.innerHTML += `
         <tr class="${ghost.clues.join(" ")}">
