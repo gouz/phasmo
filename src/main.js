@@ -6,6 +6,7 @@ import "tippy.js/dist/tippy.css";
 import "tippy.js/animations/scale.css";
 
 let classes = {};
+let tippies = {};
 
 import jsonUrl from "url:./config.json";
 
@@ -18,7 +19,12 @@ fetch(jsonUrl).then((response) => {
       <th>
         <div>
           <input id="${clue.id}" name="${clue.id}" type="checkbox" />
-          <label for="${clue.id}" data-tippy-content="${clue.title}">${clue.emoji}</label>
+          <label for="${clue.id}" 
+                 id="l_${clue.id}"
+                 data-tippy-content="${clue.title.fr}" 
+                 data-title-fr="${clue.title.fr}" 
+                 data-title-en="${clue.title.en}"
+          >${clue.emoji}</label>
         </div>
       </th>
       `;
@@ -32,20 +38,29 @@ fetch(jsonUrl).then((response) => {
         if (ghost.clues.indexOf(clue.id) != -1) clues += `<td>✔</td>`;
         else clues += `<td></td>`;
       }
-      let tooltip = `
-        ${ghost.desc}
+      let tooltip_en = `
+        💪 : ${ghost.strengths.en}
         <br />
         <br />
-        Forces uniques : ${ghost.strengths}
+        👎 : ${ghost.weaknesses.en}
+      `;
+      let tooltip_fr = `
+        💪 : ${ghost.strengths.fr}
         <br />
         <br />
-        Faiblesses : ${ghost.weaknesses}
+        👎 : ${ghost.weaknesses.fr}
       `;
       $tbody.innerHTML += `
         <tr class="${ghost.clues.join(" ")}">
           <td>
-            <span data-tippy-content="${tooltip}">
-              🔍 ${ghost.name}
+            <span id="n_${ghost.clues.join("_")}"
+                  data-tippy-content="${tooltip_fr}" 
+                  data-title-en="${tooltip_en}" 
+                  data-title-fr="${tooltip_fr}"
+            >
+              🔍 
+              <span class="name en">${ghost.name.en}</span>
+              <span class="name fr">${ghost.name.fr}</span>
             </span>
           </td>
           ${clues}
@@ -72,10 +87,38 @@ fetch(jsonUrl).then((response) => {
         false
       );
     });
-    tippy("[data-tippy-content]", {
-      placement: "right",
-      animation: "scale",
-      allowHTML: true,
+
+    document.querySelectorAll("[data-tippy-content]").forEach(($el) => {
+      tippies[$el.id] = tippy($el, {
+        placement: "right",
+        animation: "scale",
+        allowHTML: true,
+      });
+    });
+
+    document.querySelectorAll("#lang a").forEach(($el) => {
+      $el.addEventListener(
+        "click",
+        (e) => {
+          e.preventDefault();
+          document.querySelectorAll("#lang a").forEach(($e) => {
+            $e.classList.remove("active");
+          });
+          $el.classList.add("active");
+          const lang = $el.getAttribute("href").slice(1);
+          document.querySelectorAll(".name").forEach(($el) => {
+            $el.style.display = "none";
+            if ($el.classList.contains(lang)) $el.style.display = "inline";
+          });
+          document.querySelectorAll("[data-tippy-content]").forEach(($eli) => {
+            tippies[$eli.id].setContent(
+              $eli.getAttribute(`data-title-${lang}`)
+            );
+          });
+          return false;
+        },
+        false
+      );
     });
   });
 });

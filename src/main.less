@@ -3,6 +3,22 @@ body {
   @apply w-full h-full text-sm flex items-center;
 }
 
+#lang {
+  @apply absolute top-0 right-0;
+
+  a {
+    @apply mx-2 text-gray-400;
+
+    &:hover {
+      @apply underline text-black;
+    }
+
+    &.active {
+      @apply text-green-600;
+    }
+  }
+}
+
 input {
   @apply mr-2;
 }
@@ -25,6 +41,14 @@ table {
     @apply font-bold text-left text-gray-200 bg-green-800 px-0 py-0;
     span {
       @apply cursor-help block px-4 py-1;
+
+      span {
+        @apply inline p-0;
+
+        &.en {
+          @apply hidden;
+        }
+      }
 
       &:hover {
         @apply text-green-600 bg-white;
