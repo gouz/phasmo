@@ -8,9 +8,7 @@ import "tippy.js/animations/scale.css";
 let classes = {};
 let tippies = {};
 
-import jsonUrl from "url:./config.json";
-
-fetch(jsonUrl).then((response) => {
+fetch('config.json').then((response) => {
   return response.json().then(function (json) {
     let $thead = document.querySelector("thead tr");
     for (let i = 0; i < json.clues.length; i++) {
